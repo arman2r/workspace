@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,4 +11,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'portafolioApp';
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    // Verifica si estás en el navegador
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.classList.add('dark-theme');
+    }
+  }
+  
 }

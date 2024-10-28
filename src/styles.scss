@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+
+@use '@angular/material' as mat;
+// Include the common styles for Angular Material. 
+@include mat.core();
+@import './styles/variables';  
+
+// Incluir tema oscuro como base
+.dark-theme {
+  background-color: mat.get-color-from-palette($mat-dark-theme-gray, 900);
+  color: mat.get-color-from-palette($mat-dark-theme-primary, 50);
+}
+
+
+// Global styles
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 400;
+  font-style: normal; 
+  background-color: mat.get-color-from-palette($mat-dark-theme-primary, 900);  // Fondo del tema oscuro
+  color: mat.get-color-from-palette($mat-dark-theme-primary, 50);  // Texto del tema oscuro
+  @include mat.all-component-colors($mat-dark-theme);  // Aplica colores a todos los componentes de Material
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  min-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex: auto;
+  position: relative;
+}
+
+.center-hv{
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-10 {
+  gap: 1rem;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.m-w-full{
+  min-width: 100%;
+}
+
+.h-full{
+  height: 100%;
+}
+
+.elevation-10 {
+  z-index: 10 !important;
+}
+
+.p-small{
+  padding: 1rem;
+  box-sizing: border-box;
+  @media(max-width:599px) {
+    padding: .5rem;
+  }
+}
+
+.p-medium{
+  padding: 2rem;
+  box-sizing: border-box;
+  @media(max-width:599px) {
+    padding: 1rem;
+  }
+}
+
+.p-h-medium {
+  padding: 0 2rem;
+  box-sizing: border-box;
+  @media(max-width:599px) {
+    padding: 0 1rem;
+  }
+}
+
+.p-large {
+  padding: 4rem;
+  box-sizing: border-box;
+  @media(max-width:599px) {
+    padding: 2rem;
+  }
+}

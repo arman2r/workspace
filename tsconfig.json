@@ -21,7 +21,11 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "src",  // Define "src" como la base para las rutas relativas
+    "paths": {
+      "@/*": ["*"]     // Define "@" como un alias para "src"
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,0 +1,195 @@
+// src/styles/_variables.scss
+@use '@angular/material' as mat;
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+// Include the common styles for Angular Material. 
+@include mat.core();
+
+// Crear una nueva paleta personalizada con todos los derivados
+$custom-primary: mat.define-palette((
+  50: rgb(243, 226, 255),
+  100: rgb(220, 183, 255),
+  200: rgb(194, 138, 255),
+  300: rgb(166, 92, 255),
+  400: rgb(142, 54, 255),
+  500: rgb(108, 2, 215),
+  600: rgb(99, 2, 193),
+  700: rgb(87, 1, 169),
+  800: rgb(74, 1, 144),
+  900: rgb(55, 1, 105),
+  A100: rgb(220, 183, 255),
+  A200: rgb(194, 138, 255),
+  A400: rgb(142, 54, 255),
+  A700: rgb(87, 1, 169),
+  contrast: (
+    50: rgb(0, 0, 0),
+    100: rgb(0, 0, 0),
+    200: rgb(0, 0, 0),
+    300: rgb(0, 0, 0),
+    400: rgb(255, 255, 255),
+    500: rgb(255, 255, 255),
+    600: rgb(255, 255, 255),
+    700: rgb(255, 255, 255),
+    800: rgb(255, 255, 255),
+    900: rgb(255, 255, 255),
+    A100: rgb(0, 0, 0),
+    A200: rgb(0, 0, 0),
+    A400: rgb(255, 255, 255),
+    A700: rgb(255, 255, 255)
+  )
+));
+
+// src/styles/_variables.scss
+
+$mat-dark-theme-gray-palette: mat.define-palette((
+  50: #f2f2f2,      // Gris muy claro
+  100: #e0e0e0,     // Gris claro
+  200: #bdbdbd,     // Gris intermedio
+  300: #9e9e9e,     // Gris oscuro intermedio
+  400: #7e7e7e,     // Gris más oscuro
+  500: #616161,     // Color gris oscuro principal
+  600: #424242,     // Gris oscuro profundo
+  700: #303030,     // Gris muy oscuro
+  800: #1f1f1f,     // Gris casi negro
+  900: #121212,     // Gris oscuro casi negro
+  A100: #d5d5d5,    // Gris claro (accent color)
+  A200: #aaaaaa,    // Gris intermedio (accent color)
+  A400: #303030,    // Gris muy oscuro (accent color)
+  A700: #1c1c1c,    // Gris oscuro más fuerte
+  contrast: (
+    50: black,      // Contraste de colores claros
+    100: black,     // Contraste de colores claros
+    200: black,     // Contraste de colores claros
+    300: white,     // Contraste de colores oscuros
+    400: white,     // Contraste de colores oscuros
+    500: white,     // Contraste de colores oscuros
+    600: white,     // Contraste de colores oscuros
+    700: white,     // Contraste de colores oscuros
+    800: white,     // Contraste de colores oscuros
+    900: white,     // Contraste de colores oscuros
+    A100: black,    // Contraste de colores claros
+    A200: black,    // Contraste de colores claros
+    A400: white,    // Contraste de colores oscuros
+    A700: white     // Contraste de colores oscuros
+  )
+));
+
+
+// Definir la paleta gris oscuro como tema
+$mat-dark-theme-gray: mat.define-palette(
+  $mat-dark-theme-gray-palette,
+  $default: 500,
+  $lighter: 200,
+  $darker: 900,
+  $text: 100
+);
+
+// Define your theme with color palettes, typography and density
+$mat-theme-primary-palette: map-merge(mat.$cyan-palette, (contrast: (100: #150c4a)));
+$mat-theme-primary: mat.define-palette(
+  $mat-theme-primary-palette,
+  $default: 100,
+  $lighter: 100,
+  $darker: 700,
+  $text: 500
+);
+
+$mat-theme-accent-palette: map-merge(mat.$teal-palette, (501: #4d77b6, contrast: (501: white, A100: white, A200: white)));
+$mat-theme-accent: mat.define-palette(
+  $mat-theme-accent-palette,
+  $default: 501,
+  $lighter: A100,
+  $darker: A200,
+  $text: 600
+);
+
+$mat-theme-warn-palette: map-merge(mat.$pink-palette, ());
+$mat-theme-warn: mat.define-palette(
+  $mat-theme-warn-palette,
+  $default: A200,
+  $lighter: 500,
+  $darker: 500,
+  $text: A700
+);
+
+$mat-dark-theme-primary-palette: map-merge(mat.$deep-purple-palette, (contrast: (200: #030844, A100: rgba(0, 0, 0, 0.87), A700: rgba(0, 0, 0, 0.87))));
+$mat-dark-theme-primary: mat.define-palette(
+  $mat-dark-theme-primary-palette,
+  $default: 200,
+  $lighter: A100,
+  $darker: A700,
+  $text: 700
+);
+
+$mat-dark-theme-accent-palette: map-merge(mat.$orange-palette, (contrast: (A200: black, 50: black, A400: black)));
+$mat-dark-theme-accent: mat.define-palette(
+  $mat-dark-theme-accent-palette,
+  $default: A200,
+  $lighter: 50,
+  $darker: A400,
+  $text: A100
+);
+
+$mat-dark-theme-warn-palette: map-merge(mat.$pink-palette, (contrast: (A100: black, 100: white)));
+$mat-dark-theme-warn: mat.define-palette(
+  $mat-dark-theme-warn-palette,
+  $default: A100,
+  $lighter: 100,
+  $darker: A700,
+  $text: 100
+);
+
+
+$mat-density: 0;
+
+// Define typography configuration
+$custom-typography: mat.define-typography-config(
+  $font-family: "Afacad Flux, sans-serif"
+);
+
+// Define light theme
+$mat-core-theme: mat.define-light-theme((
+  color: (
+    primary: $mat-theme-primary,
+    accent: $mat-theme-accent,
+    warn: $mat-theme-warn
+  ),
+  typography: $custom-typography,
+  density: $mat-density
+));
+
+// Define dark theme
+$mat-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $mat-dark-theme-primary,
+    accent: $mat-dark-theme-accent,
+    warn: $mat-dark-theme-warn
+  ),
+  typography: $custom-typography,
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+@include mat.all-component-themes($mat-core-theme);
+@include mat.all-component-colors($mat-dark-theme);
+
+.dark-theme {
+  @include mat.all-component-colors($mat-dark-theme);
+}
+
+$custom-primary-500: mat.get-color-from-palette($custom-primary, 500);
+$custom-primary-800: mat.get-color-from-palette($custom-primary, 800);
+$custom-primary-900: mat.get-color-from-palette($custom-primary, 900);
+$mat-theme-accent: mat.get-color-from-palette($custom-primary);
+
+// Tipografía personalizada
+$custom-typography: mat.define-typography-config((
+  font-family: "Afacad Flux, sans-serif",
+  display-large: (font-size: 112px, font-weight: 300),
+  display-medium: (font-size: 56px, font-weight: 300),
+  body-medium: (font-size: 14px, line-height: 20px, font-weight: 400),
+));
+
+// Exporta las variables
+$primary-color: mat.get-color-from-palette($custom-primary, 500);
+$secondary-color: mat.get-color-from-palette($custom-primary, 200);

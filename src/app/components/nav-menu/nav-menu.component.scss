@@ -1,0 +1,28 @@
+h3,h4{
+    margin: 0 0 0 0;
+}
+
+.content-avatar{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    .avatar{
+        width: 6rem;
+        height: 6rem;
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            object-fit: fill;
+            width: 100%;
+        }
+    }
+}
+
+.list-menu{
+    text-align: center;
+}

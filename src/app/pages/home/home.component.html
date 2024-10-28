@@ -1,0 +1,408 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer
+    #drawer
+    class="sidenav"
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [opened]="!mobileQuery.matches && true"
+  >
+    <app-nav-menu class="sidenav-menu"></app-nav-menu>
+    <div class="divider-vertical"></div>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <button
+      class="btn-toggle-sidenav elevation-10"
+      style="left: -10px"
+      type="button"
+      mat-icon-button
+      (click)="drawer.toggle()"
+    >
+      @if(drawer.opened) {
+      <mat-icon class="mat-18 animate-in-left" color="light"
+        >chevron_left</mat-icon
+      >
+      } @else {
+      <div class="bar-open-menu"></div>
+      }
+    </button>
+    <div class="container p-h-medium center-hv">
+      <mat-grid-list
+        cols="3"
+        rowHeight="2:2"
+        gutterSize="10px"
+        class="m-w-full"
+      >
+        <mat-grid-tile
+          *ngIf="activeTile === 1 || activeTile === null"
+          #tile1
+          class="tile-item"
+          (click)="openPanel(1, tile1)"
+        >
+          <div class="flex w-full h-full">
+            <mat-card
+              class="m-w-full card-parent h-full"
+              [ngClass]="{ onOpenCard: activeTile === 1 }"
+            >
+              <mat-card-header class="flex">
+                <div class="flex m-w-full card-title">
+                  <div class="flex p-small">
+                    <mat-card-title>Perfil</mat-card-title>
+                    <mat-card-subtitle style="margin-top: 20px;font-size: 1.1rem;"
+                      >Historial laboral y metricas del
+                      perfil</mat-card-subtitle
+                    >
+                  </div>
+                  @if(activeTile === 1){
+                  <button
+                    mat-icon-button
+                    color="primary"
+                    (click)="closePanel(1, tile1, $event)"
+                  >
+                    <mat-icon class="mat-18">close</mat-icon>
+                  </button>
+                  }
+                </div>
+              </mat-card-header>
+              <div class="content w-full h-full">
+                <div
+                  class="timeline-content"
+                  [ngClass]="{ 'open-profile': activeTile === 1 }"
+                >
+                  <div class="tip bottom">
+                    <mat-card class="timeline-card">
+                      <mat-card-header>
+                        <div class="flex column">
+                          <mat-card-title>Diseñador Web</mat-card-title>
+                          <mat-card-subtitle
+                            >Creasotol | 2013 - 2015</mat-card-subtitle
+                          >
+                        </div>
+                      </mat-card-header>
+                      <mat-card-content style="display: none">
+                        <p>
+                          <b>Actualización de páginas en Angular:</b>
+                          Mantenimiento y mejora de aplicaciones existentes,
+                          asegurando que las funcionalidades...
+                        </p>
+                      </mat-card-content>
+                      @if(activeTile === 1){
+                      <mat-card-actions>
+                        <button
+                          mat-button
+                          (click)="drawerIntoGrid.open(); drawer.close()"
+                        >
+                          Ver descripción
+                        </button>
+                      </mat-card-actions>
+                      }
+                    </mat-card>
+                    <button
+                      color="primary"
+                      mat-mini-fab
+                      aria-label="Example icon button with a vertical three dot icon"
+                    >
+                      <span class="initial-company">C</span>
+                    </button>
+                  </div>
+                  <div class="tip top">
+                    <mat-card class="timeline-card">
+                      <mat-card-header>
+                        <div class="flex column">
+                          <mat-card-title>Diseñador Web</mat-card-title>
+                          <mat-card-subtitle
+                            >HostDime | 2015 - 2017</mat-card-subtitle
+                          >
+                        </div>
+                      </mat-card-header>
+                      <mat-card-content style="display: none">
+                        <p>
+                          <b>Actualización de páginas en Angular:</b>
+                          Mantenimiento y mejora de aplicaciones existentes,
+                          asegurando que las funcionalidades...
+                        </p>
+                      </mat-card-content>
+                      @if(activeTile === 1){
+                      <mat-card-actions>
+                        <button
+                          mat-button
+                          (click)="drawerIntoGrid.open(); drawer.close()"
+                        >
+                          Ver descripción
+                        </button>
+                      </mat-card-actions>
+                      }
+                    </mat-card>
+                    <button
+                      color="primary"
+                      mat-mini-fab
+                      aria-label="Example icon button with a vertical three dot icon"
+                    >
+                      <span class="initial-company">H</span>
+                    </button>
+                  </div>
+                  <div class="tip bottom">
+                    <mat-card class="timeline-card">
+                      <mat-card-header>
+                        <div class="flex column">
+                          <mat-card-title>FullStack Senior</mat-card-title>
+                          <mat-card-subtitle
+                            >Faroweb | 2017 - 2018</mat-card-subtitle
+                          >
+                        </div>
+                      </mat-card-header>
+                      <mat-card-content style="display: none">
+                        <p>
+                          <b>Actualización de páginas en Angular:</b>
+                          Mantenimiento y mejora de aplicaciones existentes,
+                          asegurando que las funcionalidades...
+                        </p>
+                      </mat-card-content>
+                      @if(activeTile === 1){
+                      <mat-card-actions>
+                        <button
+                          mat-button
+                          (click)="drawerIntoGrid.open(); drawer.close()"
+                        >
+                          Ver descripción
+                        </button>
+                      </mat-card-actions>
+                      }
+                    </mat-card>
+                    <button
+                      color="primary"
+                      mat-mini-fab
+                      aria-label="Example icon button with a vertical three dot icon"
+                    >
+                      <span class="initial-company">F</span>
+                    </button>
+                  </div>
+                  <div class="tip top">
+                    <mat-card class="timeline-card">
+                      <mat-card-header>
+                        <div class="flex column">
+                          <mat-card-title>Frontend Sr</mat-card-title>
+                          <mat-card-subtitle
+                            >q-vision | 2018 - 2022</mat-card-subtitle
+                          >
+                        </div>
+                      </mat-card-header>
+                      <mat-card-content style="display: none">
+                        <p>
+                          <b>Actualización de páginas en Angular:</b>
+                          Mantenimiento y mejora de aplicaciones existentes,
+                          asegurando que las funcionalidades...
+                        </p>
+                      </mat-card-content>
+                      @if(activeTile === 1){
+                      <mat-card-actions>
+                        <button
+                          mat-button
+                          (click)="drawerIntoGrid.open(); drawer.close()"
+                        >
+                          Ver descripción
+                        </button>
+                      </mat-card-actions>
+                      }
+                    </mat-card>
+                    <button
+                      color="primary"
+                      mat-mini-fab
+                      aria-label="Example icon button with a vertical three dot icon"
+                    >
+                      <span class="initial-company">Q</span>
+                    </button>
+                  </div>
+                  <div class="tip bottom">
+                    <mat-card class="timeline-card">
+                      <mat-card-header>
+                        <div class="flex column">
+                          <mat-card-title>FullStack Sr</mat-card-title>
+                          <mat-card-subtitle
+                            >Servientrega | 2022 - 2023</mat-card-subtitle
+                          >
+                        </div>
+                      </mat-card-header>
+                      <mat-card-content style="display: none">
+                        <p>
+                          <b>Actualización de páginas en Angular:</b>
+                          Mantenimiento y mejora de aplicaciones existentes,
+                          asegurando que las funcionalidades...
+                        </p>
+                      </mat-card-content>
+                      @if(activeTile === 1){
+                      <mat-card-actions>
+                        <button
+                          mat-button
+                          (click)="drawerIntoGrid.open(); drawer.close()"
+                        >
+                          Ver descripción
+                        </button>
+                      </mat-card-actions>
+                      }
+                    </mat-card>
+                    <button
+                      color="primary"
+                      mat-mini-fab
+                      aria-label="Example icon button with a vertical three dot icon"
+                    >
+                      <span class="initial-company">S</span>
+                    </button>
+                  </div>
+                  <div class="tip top">
+                    <mat-card class="timeline-card">
+                      <mat-card-header>
+                        <div class="flex column">
+                          <mat-card-title>Desarrollador web</mat-card-title>
+                          <mat-card-subtitle
+                            >Meridian Group | 2024</mat-card-subtitle
+                          >
+                        </div>
+                      </mat-card-header>
+                      <mat-card-content style="display: none">
+                        <p>
+                          <b>Actualización de páginas en Angular:</b>
+                          Mantenimiento y mejora de aplicaciones existentes,
+                          asegurando que las funcionalidades...
+                        </p>
+                      </mat-card-content>
+                      @if(activeTile === 1){
+                      <mat-card-actions>
+                        <button
+                          mat-button
+                          (click)="drawerIntoGrid.open(); drawer.close()"
+                        >
+                          Ver descripción
+                        </button>
+                      </mat-card-actions>
+                      }
+                    </mat-card>
+                    <button
+                      color="primary"
+                      mat-mini-fab
+                      aria-label="Example icon button with a vertical three dot icon"
+                    >
+                      <span class="initial-company">M</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+          *ngIf="activeTile === 2 || activeTile === null"
+          #tile2
+          class="tile-item"
+          (click)="openPanel(2, tile2)"
+        >
+          <div
+            style="
+              width: 100%;
+              height: 100%;
+              background-color: red;
+              display: flex;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h4>title 2</h4>
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="closePanel(2, tile2, $event)"
+              >
+                <mat-icon class="mat-18">close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+          *ngIf="activeTile === 3 || activeTile === null"
+          #tile3
+          class="tile-item"
+          (click)="openPanel(3, tile3)"
+          rowspan="2"
+        >
+          <div
+            style="
+              width: 100%;
+              height: 100%;
+              background-color: red;
+              display: flex;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h4>title 3</h4>
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="closePanel(3, tile3, $event)"
+              >
+                <mat-icon class="mat-18">close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+          *ngIf="activeTile === 4 || activeTile === null"
+          #tile4
+          class="tile-item"
+          (click)="openPanel(4, tile4)"
+          colspan="2"
+        >
+          <div
+            style="
+              width: 100%;
+              height: 100%;
+              background-color: red;
+              display: flex;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <h4>title 4</h4>
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="closePanel(4, tile4, $event)"
+              >
+                <mat-icon class="mat-18">close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-drawer-content>
+  <mat-drawer
+    #drawerIntoGrid
+    class="sidenav-profile"
+    mode="side"
+    position="end"
+    [(opened)]="drawerOpened"
+  >
+    <app-description-profile-nav (panelClosed)="savePanelState()"></app-description-profile-nav>
+  </mat-drawer>
+</mat-drawer-container>

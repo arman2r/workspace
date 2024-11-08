@@ -5,15 +5,32 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
-import { isPlatformBrowser, NgClass, NgIf, NgStyle } from '@angular/common';
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { DescriptionProfileNavComponent } from "../../components/description-profile-nav/description-profile-nav.component";
- 
+import { TimeLineCardComponent } from '@/app/components/time-line-card/time-line-card.component';
+import { workExp } from '@/app/interfaces/work.interface';
+import { GetWorkExperienceService } from '@/app/services/get-work-experience.service';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatSidenavModule, MatCardModule, MatButtonModule, MatIconModule, NavMenuComponent, DescriptionProfileNavComponent, MatGridListModule, NgClass, NgStyle, NgIf, DescriptionProfileNavComponent],
+  imports: [
+    TimeLineCardComponent, 
+    MatSidenavModule, 
+    MatCardModule, 
+    MatButtonModule, 
+    MatIconModule, 
+    MatChipsModule, 
+    NavMenuComponent, 
+    DescriptionProfileNavComponent, 
+    MatGridListModule, 
+    NgClass, 
+    NgStyle, 
+    NgIf, 
+    DescriptionProfileNavComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -26,11 +43,13 @@ export class HomeComponent implements OnDestroy {
   activeTile: number | null = null;
   originSizes: { [key: number]: { colspan: number; rowspan: number } } = {};
   drawerOpened = false;
-  
+  works: workExp[] = [];
+  workDetail?: workExp;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+
+  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private listWork: GetWorkExperienceService) {
     this.mobileQuery = media.matchMedia('(max-width: 1100px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
 
     if (this.mobileQuery.addEventListener) {
       this.mobileQuery.addEventListener('change', this._mobileQueryListener);
@@ -39,7 +58,13 @@ export class HomeComponent implements OnDestroy {
       this.mobileQuery.addListener(this._mobileQueryListener);
     }
 
-  }  
+  }
+
+  ngOnInit(): void {
+    this.listWork.getWorks().subscribe(data => {
+      this.works = data;
+    })
+  }
 
   openPanel(tileNumber: number, tile: MatGridTile): void {
     // Almacena el tamaño original solo la primera vez que se hace clic en un tile
@@ -68,7 +93,9 @@ export class HomeComponent implements OnDestroy {
     if (this.activeTile === null) {
       console.log('entro aqui', this.activeTile)
       this.drawerOpened = false;
-      console.log('entro aqui 2', this.drawerOpened)
+      this.drawer.opened = true;
+      this.drawer.open();
+      console.log('entro aqui 2', this.drawerOpened) 
     }
   }
 
@@ -91,11 +118,25 @@ export class HomeComponent implements OnDestroy {
     }
 
     console.log('Tile cerrado', tileNumber);
-    
+
   }
 
-  savePanelState(){
+  savePanelState() {
     console.log('entro aqui');
+    this.drawerOpened = false;
+    this.drawer.open()
+  }
+
+  drawerToggle(stats: any) { 
+    this.drawer.close();
+    this.drawerIntoGrid.open()
+    this.workDetail = JSON.parse(stats);
+    console.log('que es esto', this.workDetail)
+    this.changeDetectorRef.detectChanges()
+  }
+
+  togglePanels() {
+    this.checkTile()
   }
 
   ngOnDestroy(): void {

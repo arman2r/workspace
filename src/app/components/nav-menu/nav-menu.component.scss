@@ -16,9 +16,46 @@ h3,h4{
         display: flex;
         align-items: center;
         justify-content: center;
-        img{
+        position: relative;
+        transition: all ease-in-out .3s;
+        img.logo{
             object-fit: fill;
+            max-width: 100%;
+            position: relative;
+            z-index: 10;
+            background-color: rgba($color: #000000, $alpha: 0);
+            transform: scale(.9);
+            transition: transform ease-in-out .2s;
+        }
+        .content-qr{
+            position: absolute;
             width: 100%;
+            height: 100%;
+            z-index: 5;
+            img{
+                object-fit: fill;
+                max-width: 100%;
+                position: relative;
+                transform: scale(5);
+                opacity: 0;
+                transition: all .2s ease-in-out .2s;
+            }
+        }
+        &:hover{
+            width: 8.5rem;
+            height: 8.5rem;
+            border-radius: .5rem;
+            background-color: #fff;
+            img.logo{
+                transform: scale(.22);
+                background-color: rgba($color: #000000, $alpha: 1); 
+            }
+            .content-qr{ 
+                img{ 
+                    transform: scale(1); 
+                    opacity: 1;
+                }
+            }
         }
     }
 }

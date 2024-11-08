@@ -1,0 +1,491 @@
+[
+  {
+    "id": 0,
+    "company": "Creasotol",
+    "title": "Diseñador Web",
+    "workedTime": "2013 - 2015",
+    "Dscription": "Diseño de piezas graficas tipo banners para web y redes sociales, mockups para sitios web con photoshop e illustrator, maqutación totalmente personalizado y desarrollado con html5, css3, JavaScript, jquery del lado del cliente con php, mysql del lado del servidor bajo un hosting apache.",
+    "skills": [
+      {
+        "id": 0,
+        "skill": "HTML5",
+        "skillLevel": "100"
+      },
+      {
+        "id": 1,
+        "skill": "CSS3",
+        "skillLevel": "100"
+      },
+      {
+        "id": 2,
+        "skill": "Jquery",
+        "skillLevel": "100"
+      },
+      {
+        "id": 3,
+        "skill": "Javascript",
+        "skillLevel": "70"
+      },
+      {
+        "id": 4,
+        "skill": "php",
+        "skillLevel": "50"
+      },
+      {
+        "id": 5,
+        "skill": "mysql",
+        "skillLevel": "40"
+      },
+      {
+        "id": 6,
+        "skill": "Apache",
+        "skillLevel": "30"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "company": "HostDime",
+    "title": "Diseñador Web",
+    "workedTime": "2015 - 2017",
+    "Dscription": "Diseño de piezas digitales web, actualización y mantenimiento constante del sitio web, carrito de compras y aplicaciones para la gestión de la compañía, ofrecer diseños y prototipos en photoshop o illustrator e implementarlos en la web con html5, css3, sass, less, JavaScript nativo, angularjs, angular material, materializecss y bootstrap, manejo de herramientas mailchimp y acymailing para envío masivo de correos en campañas dirigidas por estrategias de marketing, como habilidades blandas mi función era mantener la comunicación con el equipo de desarrollo backend y diseño gráfico con el fin de generar nuevas ideas, generar entendimiento en las ideas dirigidas a campañas de marketing para el sitio web, colaboración mutua fue siempre fundamental en cada proceso.",
+    "skills": [
+      {
+        "id": 0,
+        "skill": "HTML5",
+        "skillLevel": "100"
+      },
+      {
+        "id": 1,
+        "skill": "CSS3",
+        "skillLevel": "100"
+      },
+      {
+        "id": 2,
+        "skill": "Sass",
+        "skillLevel": "75"
+      },
+      {
+        "id": 3,
+        "skill": "Javascript",
+        "skillLevel": "90"
+      },
+      {
+        "id": 4,
+        "skill": "AngularJS",
+        "skillLevel": "60"
+      },
+      {
+        "id": 5,
+        "skill": "Angular Material",
+        "skillLevel": "70"
+      },
+      {
+        "id": 6,
+        "skill": "Materialize CSS",
+        "skillLevel": "90"
+      },
+      {
+        "id": 7,
+        "skill": "Bootstrap 4",
+        "skillLevel": "80"
+      },
+      {
+        "id": 8,
+        "skill": "Less",
+        "skillLevel": "70"
+      },
+      {
+        "id": 9,
+        "skill": "NodeJS",
+        "skillLevel": "50"
+      },
+      {
+        "id": 10,
+        "skill": "mysql",
+        "skillLevel": "50"
+      },
+      {
+        "id": 10,
+        "skill": "Bower",
+        "skillLevel": "60"
+      },
+      {
+        "id": 10,
+        "skill": "gulp",
+        "skillLevel": "60"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "company": "Faroweb",
+    "title": "CEO & Desarrollador Full Stack",
+    "workedTime": "2017 - 2018",
+    "Dscription": "FreeLancer, web fullstack, community manager, manejo de campañas, email marketing, posicionamiento web seo y sem",
+    "skills": [
+      {
+        "id": 0,
+        "skill": "Comunicación efectiva",
+        "skillLevel": "75"
+      },
+      {
+        "id": 1,
+        "skill": "Inteligencia emocional",
+        "skillLevel": "80"
+      },
+      {
+        "id": 2,
+        "skill": "Resolutividad",
+        "skillLevel": "75"
+      },
+      {
+        "id": 3,
+        "skill": "Adaptabilidad",
+        "skillLevel": "85"
+      },
+      {
+        "id": 3,
+        "skill": "Resilencia",
+        "skillLevel": "90"
+      },
+      {
+        "id": 4,
+        "skill": "HTML5",
+        "skillLevel": "100"
+      },
+      {
+        "id": 5,
+        "skill": "CSS3",
+        "skillLevel": "100"
+      },
+      {
+        "id": 6,
+        "skill": "Sass",
+        "skillLevel": "75"
+      },
+      {
+        "id": 7,
+        "skill": "Javascript",
+        "skillLevel": "90"
+      },
+      {
+        "id": 8,
+        "skill": "Materialize CSS",
+        "skillLevel": "90"
+      },
+      {
+        "id": 9,
+        "skill": "Bootstrap 5",
+        "skillLevel": "80"
+      },
+      {
+        "id": 10,
+        "skill": "Php",
+        "skillLevel": "80"
+      },
+      {
+        "id": 11,
+        "skill": "Laravel",
+        "skillLevel": "70"
+      },
+      {
+        "id": 12,
+        "skill": "mysql",
+        "skillLevel": "50"
+      },
+      {
+        "id": 13,
+        "skill": "Git",
+        "skillLevel": "75"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "company": "q-vision",
+    "title": "Desarrollador Frontend",
+    "workedTime": "2018 - 2022",
+    "Dscription": "Desarrollor de sitios y plataformas web de comercio y de tipo ERP maquetadas con html5, scss, JavaScript nativo, Angular 7 y 9, Django, spring Boot , .Net Core Api, Sql server, mysql, postgress, como frontend desarrollé aplicaciones móviles híbridas con Ionic 5+, rxjs, reactjs, vuejs, se trabajó bajo patrones de diseño MVC y microservicios, tuve la oportunidad de acompañar los distintos procesos de pruebas y despliegue con integración continua, despliegue continuo, la implementación de sonar y un ambiente dedicado a pruebas. Trabajé desde un marco ágil con Scrumm, desarrolle habilidades blandas las cuales puedo destacar el liderazgo en equipos de trabajo, el seguimiento en los avances según las historias de usuario, mapeo y asignación de tareas desde taiga, reporte y socialización de ideas con mis lideres y en algunos casos con el cliente directo.",
+    "skills": [
+      {
+        "id": 0,
+        "skill": "Angular 7, 8 y 9",
+        "skillLevel": "80"
+      },
+      {
+        "id": 1,
+        "skill": "Ionic 4 y Ionic5",
+        "skillLevel": "85"
+      },
+      {
+        "id": 2,
+        "skill": "Rxjs",
+        "skillLevel": "65"
+      },
+      {
+        "id": 3,
+        "skill": "VueJS",
+        "skillLevel": "80"
+      },
+      {
+        "id": 3,
+        "skill": "Typescript",
+        "skillLevel": "80"
+      },
+      {
+        "id": 3,
+        "skill": "Javascript",
+        "skillLevel": "95"
+      },
+      {
+        "id": 4,
+        "skill": "HTML5",
+        "skillLevel": "100"
+      },
+      {
+        "id": 5,
+        "skill": "CSS3",
+        "skillLevel": "100"
+      },
+      {
+        "id": 6,
+        "skill": "Sass",
+        "skillLevel": "75"
+      },
+      {
+        "id": 7,
+        "skill": "Angular material",
+        "skillLevel": "90"
+      },
+      {
+        "id": 8,
+        "skill": "Materialize CSS",
+        "skillLevel": "90"
+      },
+      {
+        "id": 9,
+        "skill": "Bootstrap",
+        "skillLevel": "80"
+      },
+      {
+        "id": 10,
+        "skill": "DJango",
+        "skillLevel": "75"
+      },
+      {
+        "id": 11,
+        "skill": "PostGress",
+        "skillLevel": "70"
+      },
+      {
+        "id": 12,
+        "skill": "mysql",
+        "skillLevel": "80"
+      },
+      {
+        "id": 13,
+        "skill": ".Net Core",
+        "skillLevel": "75"
+      },
+      {
+        "id": 14,
+        "skill": ".SQL Server",
+        "skillLevel": "70"
+      },
+      {
+        "id": 15,
+        "skill": "Azure devops",
+        "skillLevel": "60"
+      },
+      {
+        "id": 16,
+        "skill": "Git",
+        "skillLevel": "75"
+      },
+      {
+        "id": 17,
+        "skill": "MVC y Microservicios",
+        "skillLevel": "80"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "company": "Servientrega",
+    "title": "Desarrollador FullStack Senior",
+    "workedTime": "2022 - 2023",
+    "Dscription": "Desarrollor de aplicaciones web y móviles híbridas. Se trabajó con patrones de diseño MVC y Microservicios, Tuve la oportunidad de liderar equipos de trabajo, para el desarrollo de app's móviles y el desarrollo de marketplaces, aquí pude desempeñar el rol de lider pero también de desarrollador permitiéndome entender cada proceso en la recolección de requerimientos y acompañar al equipo en los avances de los proyectos, siempre estuve dispuesto a escuchar, ayudar y/o retroalimentar cualquier duda, stopper o resolución de bugs, estuve al tanto de los Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective y Refinement, para llevar un control de entregas según la planeación.",
+    "skills": [
+      {
+        "id": 0,
+        "skill": "Angular 15",
+        "skillLevel": "95"
+      },
+      {
+        "id": 1,
+        "skill": "Ionic 5",
+        "skillLevel": "95"
+      },
+      {
+        "id": 2,
+        "skill": "Rxjs",
+        "skillLevel": "80"
+      },
+      {
+        "id": 3,
+        "skill": "VueJS",
+        "skillLevel": "80"
+      },
+      {
+        "id": 4,
+        "skill": "Typescript",
+        "skillLevel": "90"
+      },
+      {
+        "id": 5,
+        "skill": "Javascript",
+        "skillLevel": "95"
+      },
+      {
+        "id": 6,
+        "skill": "HTML5",
+        "skillLevel": "100"
+      },
+      {
+        "id": 7,
+        "skill": "CSS3",
+        "skillLevel": "100"
+      },
+      {
+        "id": 8,
+        "skill": "Sass",
+        "skillLevel": "85"
+      },
+      {
+        "id": 9,
+        "skill": "Angular material",
+        "skillLevel": "95"
+      },      
+      {
+        "id": 10,
+        "skill": "Bootstrap 4 y 5",
+        "skillLevel": "90"
+      },            
+      {
+        "id": 11,
+        "skill": ".Net Core",
+        "skillLevel": "80"
+      },
+      {
+        "id": 12,
+        "skill": ".SQL Server",
+        "skillLevel": "75"
+      },
+      {
+        "id": 13,
+        "skill": "Azure devops",
+        "skillLevel": "70"
+      },
+      {
+        "id": 14,
+        "skill": "Git",
+        "skillLevel": "80"
+      },
+      {
+        "id": 15,
+        "skill": "MVC y Microservicios",
+        "skillLevel": "80"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "company": "Meridian Group",
+    "title": "Desarrollador Web",
+    "workedTime": "2024",
+    "Dscription": "Desarrollador soluciones de software integral, brindo soporte y actualizaciones en múltiples plataformas, al igual que desarrollo de software multiplataforma y crossbrowser, en mis funciones están implementar validaciones a los formularios, hacerlos mas reactivos, mejorar el data binding y la comunicación de los componentes mediante propiedades como @Input, @Output, signals, y props, así como gestionar estados con RxJS y useEffect. Organizar y planificar mi trabajo bajo metodologías Agiles, manteniendo un registro detallado de tareas, estimaciones y reportes de avance para mis líderes.",
+    "skills": [
+      {
+        "id": 0,
+        "skill": "Angular 12, 17",
+        "skillLevel": "95"
+      },      
+      {
+        "id": 1,
+        "skill": "Rxjs",
+        "skillLevel": "85"
+      },
+      {
+        "id": 2,
+        "skill": "VueJS",
+        "skillLevel": "80"
+      },
+      {
+        "id": 3,
+        "skill": "Typescript",
+        "skillLevel": "99"
+      },
+      {
+        "id": 4,
+        "skill": "NextJS",
+        "skillLevel": "80"
+      },
+      {
+        "id": 5,
+        "skill": "Astro",
+        "skillLevel": "50"
+      },
+      {
+        "id": 6,
+        "skill": "Javascript",
+        "skillLevel": "95"
+      },
+      {
+        "id": 7,
+        "skill": "HTML5",
+        "skillLevel": "100"
+      },      
+      {
+        "id": 8,
+        "skill": "Scss",
+        "skillLevel": "85"
+      },
+      {
+        "id": 9,
+        "skill": "Angular material",
+        "skillLevel": "95"
+      },      
+      {
+        "id": 10,
+        "skill": "Tailwind",
+        "skillLevel": "80"
+      },            
+      {
+        "id": 11,
+        "skill": "ShadCn",
+        "skillLevel": "75"
+      },
+      {
+        "id": 12,
+        "skill": ".SQL Server",
+        "skillLevel": "75"
+      },
+      {
+        "id": 13,
+        "skill": "AWS",
+        "skillLevel": "60"
+      },
+      {
+        "id": 14,
+        "skill": "Git",
+        "skillLevel": "85"
+      },
+      {
+        "id": 15,
+        "skill": "MVC y Microservicios",
+        "skillLevel": "80"
+      }
+    ]
+  }
+]

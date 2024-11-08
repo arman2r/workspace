@@ -4,12 +4,27 @@
       <button mat-icon-button (click)="toggleStatePanel()">
         <mat-icon class="mat-18">arrow_backward</mat-icon>
       </button>
-      <span>Diseñador Web</span>
+      <span>{{detailWork?.title}}</span>
     </div>
   </mat-toolbar-row>
-  <mat-toolbar-row style="max-height: 59px;"> 
-    <sub>Creasotol | 2013 - 2015</sub>
+  <mat-toolbar-row style="max-height: 59px">
+    <sub>{{detailWork?.company}} | {{detailWork?.workedTime}}</sub>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<p>Auto-resizing sidenav {{ panelClosed }}</p>
+<mat-list class="description">
+  <mat-list-item style="height: fit-content !important;">
+    <p style="white-space: pre-line">
+      {{detailWork?.Dscription?.slice(0, showMore ? -1 : 180) + (showMore ? '':'...')}}
+      <button mat-button (click)="showMore = !showMore">Ver {{showMore ? 'menos':'más'}}</button>
+    </p>
+  </mat-list-item>
+  <mat-divider> </mat-divider>
+  @for (skill of detailWork?.skills; track $index) {
+    <mat-list-item>
+      <mat-icon matListItemIcon>settings</mat-icon>
+      <div matListItemTitle class="skill-progress">{{skill.skill}} {{getSkillProgress($index)}}%</div>      
+      <mat-progress-bar class="progress-bar" mode="buffer" [bufferValue]="getSkillProgress($index) + 5" [value]="getSkillProgress($index)"></mat-progress-bar>
+    </mat-list-item>
+  }  
+</mat-list>

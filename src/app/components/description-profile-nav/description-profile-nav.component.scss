@@ -1,0 +1,44 @@
+.skill-progress {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    --mdc-linear-progress-active-indicator-height: 8px;
+    --mdc-linear-progress-track-height: 8px;
+}
+
+.description{
+    height: calc(100% - 139px);
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 12px;
+        /* Ancho del scroll vertical */
+        height: 12px;
+        /* Ancho del scroll horizontal */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #555;
+        /* Color del fondo de la barra de scroll */
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #888;
+        /* Color de la barra que se arrastra */
+        border-radius: 10px;
+        border: 2px solid #888;
+        /* Espacio alrededor del thumb */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #f0f0f0;
+        /* Cambia el color cuando se pasa el mouse por encima */
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}

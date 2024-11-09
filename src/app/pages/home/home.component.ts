@@ -11,26 +11,29 @@ import { DescriptionProfileNavComponent } from "../../components/description-pro
 import { TimeLineCardComponent } from '@/app/components/time-line-card/time-line-card.component';
 import { workExp } from '@/app/interfaces/work.interface';
 import { GetWorkExperienceService } from '@/app/services/get-work-experience.service';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
+import { CheckHorizontalScrollDirective } from '@/app/directives/check-horizontal-scroll.directive';
+import { skill } from '@/app/interfaces/skill.interface';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    TimeLineCardComponent, 
-    MatSidenavModule, 
-    MatCardModule, 
-    MatButtonModule, 
-    MatIconModule, 
-    MatChipsModule, 
-    NavMenuComponent, 
-    DescriptionProfileNavComponent, 
-    MatGridListModule, 
-    NgClass, 
-    NgStyle, 
-    NgIf, 
-    DescriptionProfileNavComponent],
+    TimeLineCardComponent,
+    MatSidenavModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatChipsModule,
+    NavMenuComponent,
+    DescriptionProfileNavComponent,
+    MatGridListModule,
+    NgClass,
+    NgStyle,
+    NgIf,
+    DescriptionProfileNavComponent,
+    CheckHorizontalScrollDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -45,6 +48,7 @@ export class HomeComponent implements OnDestroy {
   drawerOpened = false;
   works: workExp[] = [];
   workDetail?: workExp;
+  topSkills: skill[] = [];
 
 
   constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private listWork: GetWorkExperienceService) {
@@ -61,8 +65,24 @@ export class HomeComponent implements OnDestroy {
   }
 
   ngOnInit(): void {
-    this.listWork.getWorks().subscribe(data => {
+    this.listWork.getWorks().subscribe((data: workExp[]) => {
       this.works = data;
+      console.log(data)
+      const listTopSkills = data
+        .flatMap(x => x.skills as skill[]) // Aplana el array de skills
+        .filter((skill, index, self) => 
+          self.findIndex(s => s.skill === skill.skill) === index // Filtra duplicados por nombre
+        )
+        .filter(skill => skill.skillLevel! >= 70) // Filtra por skillLevel
+        .sort((a: skill, b: skill) => a.skill!.localeCompare(b.skill!))
+        .filter(({skill}) => skill! !== 'Adaptabilidad' && 
+        skill! !== 'Comunicación efectiva' &&
+        skill! !== 'Inteligencia emocional' &&
+        skill! !== 'Resilencia' &&
+        skill! !== 'Resolutividad');
+
+      console.log(listTopSkills);
+      this.topSkills = listTopSkills.sort();
     })
   }
 
@@ -95,7 +115,7 @@ export class HomeComponent implements OnDestroy {
       this.drawerOpened = false;
       this.drawer.opened = true;
       this.drawer.open();
-      console.log('entro aqui 2', this.drawerOpened) 
+      console.log('entro aqui 2', this.drawerOpened)
     }
   }
 
@@ -127,7 +147,7 @@ export class HomeComponent implements OnDestroy {
     this.drawer.open()
   }
 
-  drawerToggle(stats: any) { 
+  drawerToggle(stats: any) {
     this.drawer.close();
     this.drawerIntoGrid.open()
     this.workDetail = JSON.parse(stats);

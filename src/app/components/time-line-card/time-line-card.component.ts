@@ -4,11 +4,12 @@ import { EventEmitter } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { workExp } from '@/app/interfaces/work.interface';
 import { NgClass } from '@angular/common';
+import { CheckHorizontalScrollDirective } from '@/app/directives/check-horizontal-scroll.directive';
 
 @Component({
   selector: 'app-time-line-card',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, NgClass],
+  imports: [MatCardModule, MatButtonModule, NgClass, CheckHorizontalScrollDirective],
   templateUrl: './time-line-card.component.html',
   styleUrl: './time-line-card.component.scss'
 })

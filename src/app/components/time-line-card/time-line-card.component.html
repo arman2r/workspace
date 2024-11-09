@@ -1,4 +1,4 @@
-<div class="timeline-content" [ngClass]="{ 'open-profile': tileActive === 1 }">
+<div class="timeline-content" [ngClass]="{ 'open-profile': tileActive === 1 }" appCheckHorizontalScroll>
   @for (work of dataWorks; track $index) {
   <div class="tip" [ngClass]="$index % 2 === 0 ? 'bottom' : 'top'">
     <mat-card

@@ -89,16 +89,13 @@
           >
             <mat-card-header class="flex">
               <div class="flex m-w-full card-title">
-                <div class="flex p-small">
+                <div class="flex p-small pattern-chips-skill">
                   <mat-card-title>Skills</mat-card-title>
                   <mat-card-subtitle style="margin-top: 20px;font-size: 1.1rem;">
-                    <mat-chip-set aria-label="Fish selection" style="display: flex; flex-flow: row; white-space: nowrap;">
-                      <mat-chip>Javascript</mat-chip>
-                      <mat-chip>Angular 17</mat-chip>
-                      <mat-chip>NextJS</mat-chip>
-                      <mat-chip>NodeJS</mat-chip>
-                      <mat-chip>.Net Core</mat-chip>
-                      <mat-chip>.SQL Server</mat-chip>
+                    <mat-chip-set appCheckHorizontalScroll aria-label="Fish selection" style="display: flex; flex-flow: row; white-space: nowrap;">
+                      @for (topSkill of this.topSkills.slice(0, 6); track $index) {
+                        <mat-chip>{{topSkill.skill}}</mat-chip>
+                      }
                     </mat-chip-set>
                   </mat-card-subtitle>
                 </div>

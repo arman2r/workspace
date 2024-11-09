@@ -1,10 +1,10 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 
-@use '@angular/material' as mat;
+@use '@angular/material'as mat;
 // Include the common styles for Angular Material. 
 @include mat.core();
-@import './styles/variables';  
+@import './styles/variables';
 
 // Incluir tema oscuro como base
 .dark-theme {
@@ -20,10 +20,10 @@ body {
   margin: 0;
   font-family: "Afacad Flux", sans-serif;
   font-weight: 400;
-  font-style: normal; 
-  background-color: mat.get-color-from-palette($mat-dark-theme-primary, 900);  // Fondo del tema oscuro
-  color: mat.get-color-from-palette($mat-dark-theme-primary, 50);  // Texto del tema oscuro
-  @include mat.all-component-colors($mat-dark-theme);  // Aplica colores a todos los componentes de Material
+  font-style: normal;
+  background-color: mat.get-color-from-palette($mat-dark-theme-primary, 900); // Fondo del tema oscuro
+  color: mat.get-color-from-palette($mat-dark-theme-primary, 50); // Texto del tema oscuro
+  @include mat.all-component-colors($mat-dark-theme); // Aplica colores a todos los componentes de Material
 }
 
 .container {
@@ -36,7 +36,7 @@ body {
   position: relative;
 }
 
-.center-hv{
+.center-hv {
   align-items: center;
   justify-content: center;
 }
@@ -55,15 +55,15 @@ body {
   gap: 1rem;
 }
 
-.w-full{
+.w-full {
   width: 100%;
 }
 
-.m-w-full{
+.m-w-full {
   min-width: 100%;
 }
 
-.h-full{
+.h-full {
   height: 100%;
 }
 
@@ -71,17 +71,19 @@ body {
   z-index: 10 !important;
 }
 
-.p-small{
+.p-small {
   padding: 1rem;
   box-sizing: border-box;
+
   @media(max-width:599px) {
     padding: .5rem;
   }
 }
 
-.p-medium{
+.p-medium {
   padding: 2rem;
   box-sizing: border-box;
+
   @media(max-width:599px) {
     padding: 1rem;
   }
@@ -90,6 +92,7 @@ body {
 .p-h-medium {
   padding: 0 2rem;
   box-sizing: border-box;
+
   @media(max-width:599px) {
     padding: 0 1rem;
   }
@@ -98,7 +101,64 @@ body {
 .p-large {
   padding: 4rem;
   box-sizing: border-box;
+
   @media(max-width:599px) {
     padding: 2rem;
+  }
+}
+
+.pattern-chips-skill {
+  display: flex;
+  width: 100%;
+  text-wrap: nowrap;
+  flex-flow: column;
+
+  mat-card-subtitle {
+    margin-top: 0px !important;
+  }
+
+  mat-chip-set {
+    margin-top: 10px;
+    margin-bottom: -21px;
+    padding-bottom: 6px;
+
+    div {
+      display: flex;
+      flex-flow: row;
+      width: 100%;
+      overflow: auto;
+      padding-bottom: 5px;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+        /* Ancho del scroll vertical */
+        height: 12px;
+        /* Ancho del scroll horizontal */
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #555;
+        /* Color del fondo de la barra de scroll */
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #888;
+        /* Color de la barra que se arrastra */
+        border-radius: 10px;
+        border: 2px solid #888;
+        /* Espacio alrededor del thumb */
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #f0f0f0;
+        /* Cambia el color cuando se pasa el mouse por encima */
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { NavMenuComponent } from '../../components/nav-menu/nav-menu.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,6 +14,9 @@ import { GetWorkExperienceService } from '@/app/services/get-work-experience.ser
 import { MatChipsModule } from '@angular/material/chips';
 import { CheckHorizontalScrollDirective } from '@/app/directives/check-horizontal-scroll.directive';
 import { skill } from '@/app/interfaces/skill.interface';
+import { SwiperOptions } from 'swiper/types';
+import { SwiperContainer } from 'swiper/element';
+import { SwiperDirective } from '@/app/directives/swiper.directive';
 
 
 @Component({
@@ -27,15 +30,19 @@ import { skill } from '@/app/interfaces/skill.interface';
     MatIconModule,
     MatChipsModule,
     NavMenuComponent,
-    DescriptionProfileNavComponent,
     MatGridListModule,
     NgClass,
     NgStyle,
     NgIf,
     DescriptionProfileNavComponent,
-    CheckHorizontalScrollDirective],
+    CheckHorizontalScrollDirective,
+    //SwiperDirective
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class HomeComponent implements OnDestroy {
 
@@ -50,6 +57,69 @@ export class HomeComponent implements OnDestroy {
   workDetail?: workExp;
   topSkills: skill[] = [];
 
+  //@ViewChild('swiper', { static: false }) swiper!: SwiperContainer;
+
+  contents: skill[] = [
+    {
+      skill: 'Computer',
+      description: 'Description about computer...',
+      url: 'https://picsum.photos/id/1/640/480',
+    },
+    {
+      skill: 'Building',
+      description: 'Building description...',
+      url: 'https://picsum.photos/id/101/640/480',
+    },
+    {
+      skill: 'Glass over a computer',
+      description: 'Description of a glass over a computer',
+      url: 'https://picsum.photos/id/201/640/480',
+    },
+    {
+      skill: 'Autumn',
+      description: 'Description about autumn leaves',
+      url: 'https://picsum.photos/id/301/640/480',
+    },
+    {
+      skill: 'Balloon',
+      description: 'Coloured balloon',
+      url: 'https://picsum.photos/id/401/640/480',
+    },
+  ];
+
+  /*index = 0;
+
+  swiperConfig: SwiperOptions = {
+    spaceBetween: 10,
+    navigation: true,
+  };
+
+  swiperThumbsConfig: SwiperOptions = {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+  };*/
+
+  /*ngAfterViewInit(): void {
+    setTimeout(() => {
+      //console.log("Attempting swiper initialization:", this.swiper);
+      if (this.swiper && this.swiper.swiper) {
+        //console.log("Swiper is ready:", this.swiper.nativeElement);
+        this.swiper.swiper.on('init', () => {
+          //console.log("Swiper initialized:", this.swiper.nativeElement);
+          this.swiper.swiper.activeIndex = this.index;
+          this.changeDetectorRef.detectChanges();
+        });
+      } else {
+        console.warn("Swiper or nativeElement not available:", this.swiper);
+      }
+    })
+  }*/
+
+  /*slideChange(swiper: any) {
+    this.index = swiper.detail[0].activeIndex;
+  }*/
 
   constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private listWork: GetWorkExperienceService) {
     this.mobileQuery = media.matchMedia('(max-width: 1100px)');
@@ -67,21 +137,21 @@ export class HomeComponent implements OnDestroy {
   ngOnInit(): void {
     this.listWork.getWorks().subscribe((data: workExp[]) => {
       this.works = data;
-      console.log(data)
-      const listTopSkills = data
+      //console.log(data)
+      const listTopSkills = data.slice(-3)
         .flatMap(x => x.skills as skill[]) // Aplana el array de skills
-        .filter((skill, index, self) => 
+        .filter((skill, index, self) =>
           self.findIndex(s => s.skill === skill.skill) === index // Filtra duplicados por nombre
         )
         .filter(skill => skill.skillLevel! >= 70) // Filtra por skillLevel
         .sort((a: skill, b: skill) => a.skill!.localeCompare(b.skill!))
-        .filter(({skill}) => skill! !== 'Adaptabilidad' && 
-        skill! !== 'Comunicación efectiva' &&
-        skill! !== 'Inteligencia emocional' &&
-        skill! !== 'Resilencia' &&
-        skill! !== 'Resolutividad');
+        .filter(({ skill }) => skill! !== 'Adaptabilidad' &&
+          skill! !== 'Comunicación efectiva' &&
+          skill! !== 'Inteligencia emocional' &&
+          skill! !== 'Resilencia' &&
+          skill! !== 'Resolutividad');
 
-      console.log(listTopSkills);
+      //console.log(listTopSkills);
       this.topSkills = listTopSkills.sort();
     })
   }

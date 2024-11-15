@@ -47,7 +47,8 @@
                 <div class="flex m-w-full card-title">
                   <div class="flex p-small">
                     <mat-card-title>Perfil</mat-card-title>
-                    <mat-card-subtitle style="margin-top: 20px;font-size: 1.1rem;"
+                    <mat-card-subtitle
+                      style="margin-top: 20px; font-size: 1.1rem"
                       >Historial laboral y metricas del
                       perfil</mat-card-subtitle
                     >
@@ -64,14 +65,14 @@
                 </div>
               </mat-card-header>
               <div class="content w-full h-full">
-                  <app-time-line-card 
-                    [dataWorks]="works"
-                    [tileActive]="activeTile" 
-                    [drawer]="drawer.opened" 
-                    [drawerIntoGrid]="drawerIntoGrid.opened"
-                    (drawerStatus)="drawerToggle($event)">
-                  </app-time-line-card>
-                    
+                <app-time-line-card
+                  [dataWorks]="works"
+                  [tileActive]="activeTile"
+                  [drawer]="drawer.opened"
+                  [drawerIntoGrid]="drawerIntoGrid.opened"
+                  (drawerStatus)="drawerToggle($event)"
+                >
+                </app-time-line-card>
               </div>
             </mat-card>
           </div>
@@ -82,39 +83,110 @@
           class="tile-item"
           (click)="openPanel(2, tile2)"
         >
-        <div class="flex w-full h-full">
-          <mat-card
-            class="m-w-full card-parent h-full"
-            [ngClass]="{ onOpenCard: activeTile === 2 }"
-          >
-            <mat-card-header class="flex">
-              <div class="flex m-w-full card-title">
-                <div class="flex p-small pattern-chips-skill">
-                  <mat-card-title>Skills</mat-card-title>
-                  <mat-card-subtitle style="margin-top: 20px;font-size: 1.1rem;">
-                    <mat-chip-set appCheckHorizontalScroll aria-label="Fish selection" style="display: flex; flex-flow: row; white-space: nowrap;">
-                      @for (topSkill of this.topSkills.slice(0, 6); track $index) {
-                        <mat-chip>{{topSkill.skill}}</mat-chip>
-                      }
-                    </mat-chip-set>
-                  </mat-card-subtitle>
+          <div class="flex w-full h-full">
+            <mat-card
+              class="m-w-full card-parent h-full"
+              [ngClass]="{ onOpenCard: activeTile === 2 }"
+            >
+              <mat-card-header class="flex">
+                <div class="flex m-w-full card-title">
+                  <div class="flex p-small pattern-chips-skill">
+                    <mat-card-title>Skills</mat-card-title>
+                    <mat-card-subtitle
+                      style="margin-top: 20px; font-size: 1.1rem"
+                    >
+                      <mat-chip-set
+                        appCheckHorizontalScroll
+                        aria-label="Fish selection"
+                        style="
+                          display: flex;
+                          flex-flow: row;
+                          white-space: nowrap;
+                        "
+                      >
+                        @for (topSkill of this.topSkills.slice(0, 6); track
+                        $index) {
+                        <mat-chip :key="$index">{{ topSkill.skill }}</mat-chip>
+                        }
+                      </mat-chip-set>
+                    </mat-card-subtitle>
+                  </div>
+                  @if(activeTile === 2){
+                  <button
+                    mat-icon-button
+                    color="primary"
+                    (click)="closePanel(2, tile2, $event)"
+                  >
+                    <mat-icon class="mat-18">close</mat-icon>
+                  </button>
+                  }
                 </div>
-                @if(activeTile === 2){
-                <button
-                  mat-icon-button
-                  color="primary"
-                  (click)="closePanel(2, tile2, $event)"
+              </mat-card-header>
+              <div class="content w-full h-full">
+                <div class="flex flex-wrap w-full h-full content-skill" [ngClass]="{'no-open-content': activeTile !== 2}">
+                  @if(activeTile === 2){
+                    <section>
+                      <h3>Javascript</h3>
+                      <p>
+                        Este lenguaje me ha acompañado en toda mi carrera
+                        profesional, inicieconeste lenguaje en el2013, aqui ya
+                        sabía como manipular el dom, cambiar la apariencia de los
+                        elementos html, para el 2015 ya sabía como hacer una
+                        petición http, con fetch y ajax de la librería jquery.
+                        <br /><br />
+                        Este lenguaje me ha acompañado en toda mi carrera
+                        profesional, inicieconeste lenguaje en el2013, aqui ya
+                        sabía como manipular el dom, cambiar la apariencia de los
+                        elementos html, para el 2015 ya sabía como hacer una
+                        petición http, con fetch y ajax de la librería jquery.
+                        <br /><br />
+                        Este lenguaje me ha acompañado en toda mi carrera
+                        profesional, inicieconeste lenguaje en el2013, aqui ya
+                        sabía como manipular el dom, cambiar la apariencia de los
+                        elementos html, para el 2015 ya sabía como hacer una
+                        petición http, con fetch y ajax de la librería jquery.
+                        <br /><br />
+                        Con javascript he participado en desarrollo de sitios web,
+                        manipulación de elementos html, destructuración de
+                        arreglos, creación de clases y herencia de clases,
+                        funciones asyncronas y promesas, manejo de archivos blob o
+                        base64 en campos tipo file, manejo de rutas, validación de
+                        formularios basados en clases, expresiones regulares,
+                        manejo de bucles y construcción dinamica del html.
+                        <br /><br />
+                      </p>
+                      <h4><b>Empresas y/o proyectos involucrados</b></h4>
+                      <b
+                        >Creasotol x 2 años, HostDime x 2 años, Faroweb x 2 años,
+                        q-vision x 5 años, servientrega x 1 año, Meridian x 1
+                        año</b
+                      >
+                    </section>
+                    }
+                  <div class="image-skill">
+                    <img src="assets/images/javascript.jpg" alt="js" />
+                  </div>
+                </div>
+                <!--<swiper-container 
+                  #swiper
+                  [config]="swiperConfig"
+                  thumbs-swiper=".mySwiper2"
+                  (slidechange)="slideChange($event)"
                 >
-                  <mat-icon class="mat-18">close</mat-icon>
-                </button>
-                }
+                  @for (item of contents; track $index) {
+                  <swiper-slide>
+                    <div
+                      class="ratio ratio-4x3"
+                       
+                    >
+                    <img [src]="item.url" [alt]="item.skill">
+                  </div>
+                  </swiper-slide>
+                  }
+                </swiper-container>-->
               </div>
-            </mat-card-header>
-            <div class="content w-full h-full"> 
-                  
-            </div>
-          </mat-card>
-        </div>
+            </mat-card>
+          </div>
         </mat-grid-tile>
         <mat-grid-tile
           *ngIf="activeTile === 3 || activeTile === null"
@@ -194,8 +266,11 @@
     class="sidenav-profile"
     mode="side"
     position="end"
-    [(opened)]="drawerOpened" 
+    [(opened)]="drawerOpened"
   >
-    <app-description-profile-nav [detailWork]="workDetail" (panelClosed)="savePanelState()"></app-description-profile-nav>
+    <app-description-profile-nav
+      [detailWork]="workDetail"
+      (panelClosed)="savePanelState()"
+    ></app-description-profile-nav>
   </mat-drawer>
 </mat-drawer-container>

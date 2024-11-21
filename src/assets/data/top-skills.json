@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "title": "Angular",
+    "companies": "HostDime x 2 años, q-vision x 5 años, servientrega x 1 año, Meridian x 1 año",
+    "description": "Mis inicios en angular se remontan al 2015, cuando angularjs aún resaltaba en el desarrollo moderno para páginas web basandose en la escritura pura de javascript bajo el concepto two-way data binding, que permitía interactuar entre la vista y el modelo (view model).<br><br>Para el 2018, incursione a una nueva y mejorada versión que venía escalando hace un par de años, estamos hablando de angular 7, ahora su implementanción se basaba en typescript, un lenguaje compilado que genera javascript, basa su logica en la creación de objetos basados en clases, es aquí donde todo lo que conocía de angularjs cambió y desde ese entonces mi vida laboral siempre ha girado en torno a desarrollar soluciones con este framework.<br><br>Hoy en día considero que angular desde la versión 7 o superior (angular 7+), sigue siendo muy similar solo han cambiado algunos aspectos que facilitan la modularización, el data binding y la sincronización de información con otros componentes, no obstante, cada día aprendo mas de este framework y sus actualizaciones no dejan de sorprender a toda la comunidad.<br><br>Empresas y/o proyectos involucrados HostDime x 2 años, q-vision x 5 años, servientrega x 1 año, Meridian x 1 año",
+    "image": "angular.png"    
+  },
+  {
+    "id": 1,
+    "title": "Javascript",
+    "companies": "Creasotol x 2 años, HostDime x 2 años, Faroweb x 2 años, q-vision x 5 años, servientrega x 1 año ",
+    "description": "Este lenguaje me ha acompañado en toda mi carrera profesional, inicie con este lenguaje en el 2013, aqui ya sabía como manipular el dom, cambiar la apariencia de los elelementos html, para el 2015 ya sabía como hacer una petición http, con fetch y ajax de la librería jquery.<br><br>Con javascript he participado en desarrollo de sitios web, manipulación de elementos html, destructuración de arreglos, creación de clases  y herencia de clases, funciones asyncronas y promesas, manejo de archivos blob o base64 en campos tipo file, manejo de rutas, validación de formularios basados en clases, expresiones regulares, manejo de bucles y construcción dinamica del html.",
+    "image": "javascript.jpg"    
+  },
+  {
+    "id": 2,
+    "title": "NextJS",
+    "companies": "q-vision x 2 años, Meridian x 1 año",
+    "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, vel temporibus modi voluptate ducimus sed exercitationem culpa ipsum sunt dolorum alias enim. Porro id deserunt eos consectetur aperiam temporibus omnis!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!",
+    "image": "nextjs.png"    
+  },  
+  {
+    "id": 3,
+    "title": "NodeJS",
+    "companies": "Creasotol x 2 años, HostDime x 2 años, Faroweb x 2 años, q-vision x 5 años, servientrega x 1 año ",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!",
+    "image": "node.png"    
+  },
+  {
+    "id": 3,
+    "title": ".NET Core",
+    "companies": "q-vision x 2 años, servientrega x 1 año ",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, voluptatibus omnis id aspernatur exercitationem, quasi consequatur deserunt minima ex nesciunt voluptate! Deserunt voluptatem consectetur, consequuntur quae magni iste rerum ratione!",
+    "image": "net-core.png"    
+  }
+  
+]

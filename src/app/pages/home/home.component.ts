@@ -17,6 +17,9 @@ import { skill } from '@/app/interfaces/skill.interface';
 import { SwiperOptions } from 'swiper/types';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperDirective } from '@/app/directives/swiper.directive';
+import { TopSkillsService } from '@/app/services/top-skills.service';
+import { SanitizedTopSkill, TopSkill } from '@/app/interfaces/topSkill.interface';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 @Component({
@@ -55,7 +58,8 @@ export class HomeComponent implements OnDestroy {
   drawerOpened = false;
   works: workExp[] = [];
   workDetail?: workExp;
-  topSkills: skill[] = [];
+  topSkills: TopSkill[] = []; 
+  public htmlSanitizado: SanitizedTopSkill[] = [];
 
   //@ViewChild('swiper', { static: false }) swiper!: SwiperContainer;
 
@@ -121,7 +125,12 @@ export class HomeComponent implements OnDestroy {
     this.index = swiper.detail[0].activeIndex;
   }*/
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private listWork: GetWorkExperienceService) {
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef, 
+    media: MediaMatcher, 
+    private listWork: GetWorkExperienceService, 
+    private listTopSkills: TopSkillsService,
+    private sanitizer: DomSanitizer) {
     this.mobileQuery = media.matchMedia('(max-width: 1100px)');
     this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
 
@@ -137,23 +146,18 @@ export class HomeComponent implements OnDestroy {
   ngOnInit(): void {
     this.listWork.getWorks().subscribe((data: workExp[]) => {
       this.works = data;
-      //console.log(data)
-      const listTopSkills = data.slice(-3)
-        .flatMap(x => x.skills as skill[]) // Aplana el array de skills
-        .filter((skill, index, self) =>
-          self.findIndex(s => s.skill === skill.skill) === index // Filtra duplicados por nombre
-        )
-        .filter(skill => skill.skillLevel! >= 70) // Filtra por skillLevel
-        .sort((a: skill, b: skill) => a.skill!.localeCompare(b.skill!))
-        .filter(({ skill }) => skill! !== 'Adaptabilidad' &&
-          skill! !== 'Comunicación efectiva' &&
-          skill! !== 'Inteligencia emocional' &&
-          skill! !== 'Resilencia' &&
-          skill! !== 'Resolutividad');
-
-      //console.log(listTopSkills);
-      this.topSkills = listTopSkills.sort();
+      //console.log(data) 
     })
+    
+    this.listTopSkills.getTopSkills().subscribe(res => {
+      this.topSkills = res;
+      this.htmlSanitizado = res.map(skill => ({
+        ...skill, // Mantener todas las propiedades originales
+        description: this.sanitizer.bypassSecurityTrustHtml(skill.description || '') // Sanitizar solo Description
+      }));
+ 
+    })
+
   }
 
   openPanel(tileNumber: number, tile: MatGridTile): void {

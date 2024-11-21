@@ -91,7 +91,7 @@
               <mat-card-header class="flex">
                 <div class="flex m-w-full card-title">
                   <div class="flex p-small pattern-chips-skill">
-                    <mat-card-title>Skills</mat-card-title>
+                    <mat-card-title>Top Skills</mat-card-title>
                     <mat-card-subtitle
                       style="margin-top: 20px; font-size: 1.1rem"
                     >
@@ -104,9 +104,8 @@
                           white-space: nowrap;
                         "
                       >
-                        @for (topSkill of this.topSkills.slice(0, 6); track
-                        $index) {
-                        <mat-chip :key="$index">{{ topSkill.skill }}</mat-chip>
+                        @for (topSkill of this.topSkills; track $index) {
+                        <mat-chip :key="$index">{{ topSkill.title }}</mat-chip>
                         }
                       </mat-chip-set>
                     </mat-card-subtitle>
@@ -123,50 +122,30 @@
                 </div>
               </mat-card-header>
               <div class="content w-full h-full">
-                <div class="flex flex-wrap w-full h-full content-skill" [ngClass]="{'no-open-content': activeTile !== 2}">
+                @for (itemSkill of htmlSanitizado; track $index) {
+                <div
+                  class="flex flex-wrap w-full h-full content-skill"
+                  [ngClass]="{ 'no-open-content': activeTile !== 2 }"
+                >
                   @if(activeTile === 2){
-                    <section>
-                      <h3>Javascript</h3>
-                      <p>
-                        Este lenguaje me ha acompañado en toda mi carrera
-                        profesional, inicieconeste lenguaje en el2013, aqui ya
-                        sabía como manipular el dom, cambiar la apariencia de los
-                        elementos html, para el 2015 ya sabía como hacer una
-                        petición http, con fetch y ajax de la librería jquery.
-                        <br /><br />
-                        Este lenguaje me ha acompañado en toda mi carrera
-                        profesional, inicieconeste lenguaje en el2013, aqui ya
-                        sabía como manipular el dom, cambiar la apariencia de los
-                        elementos html, para el 2015 ya sabía como hacer una
-                        petición http, con fetch y ajax de la librería jquery.
-                        <br /><br />
-                        Este lenguaje me ha acompañado en toda mi carrera
-                        profesional, inicieconeste lenguaje en el2013, aqui ya
-                        sabía como manipular el dom, cambiar la apariencia de los
-                        elementos html, para el 2015 ya sabía como hacer una
-                        petición http, con fetch y ajax de la librería jquery.
-                        <br /><br />
-                        Con javascript he participado en desarrollo de sitios web,
-                        manipulación de elementos html, destructuración de
-                        arreglos, creación de clases y herencia de clases,
-                        funciones asyncronas y promesas, manejo de archivos blob o
-                        base64 en campos tipo file, manejo de rutas, validación de
-                        formularios basados en clases, expresiones regulares,
-                        manejo de bucles y construcción dinamica del html.
-                        <br /><br />
-                      </p>
-                      <h4><b>Empresas y/o proyectos involucrados</b></h4>
-                      <b
-                        >Creasotol x 2 años, HostDime x 2 años, Faroweb x 2 años,
-                        q-vision x 5 años, servientrega x 1 año, Meridian x 1
-                        año</b
-                      >
-                    </section>
-                    }
+                  <section>
+                    <h3>{{ itemSkill.title }}</h3>
+                    <p [innerHTML]="itemSkill.description">
+                    </p>
+                    <h4><b>Empresas y/o proyectos involucrados</b></h4>
+                    <b> {{itemSkill.companies}} </b>
+                  </section>
+                  }
                   <div class="image-skill">
-                    <img src="assets/images/javascript.jpg" alt="js" />
+                    <img
+                      [src]="'assets/images/' + itemSkill.image "
+                      class="w-full"
+                      alt="js"
+                    />
                   </div>
                 </div>
+                }
+                 
                 <!--<swiper-container 
                   #swiper
                   [config]="swiperConfig"

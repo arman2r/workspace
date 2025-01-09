@@ -126,6 +126,7 @@
                 <div
                   class="flex flex-wrap w-full h-full content-skill"
                   [ngClass]="{ 'no-open-content': activeTile !== 2 }"
+                  #contentSkillElement
                 >
                   @if(activeTile === 2){
                   <section>
@@ -140,7 +141,8 @@
                     <img
                       [src]="'assets/images/' + itemSkill.image "
                       class="w-full"
-                      alt="js"
+                      [alt]="itemSkill.title"
+                      [appDetectDominantColor]="contentSkillElement"
                     />
                   </div>
                 </div>

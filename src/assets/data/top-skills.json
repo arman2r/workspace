@@ -11,7 +11,7 @@
     "title": "Javascript",
     "companies": "Creasotol x 2 años, HostDime x 2 años, Faroweb x 2 años, q-vision x 5 años, servientrega x 1 año ",
     "description": "Este lenguaje me ha acompañado en toda mi carrera profesional, inicie con este lenguaje en el 2013, aqui ya sabía como manipular el dom, cambiar la apariencia de los elelementos html, para el 2015 ya sabía como hacer una petición http, con fetch y ajax de la librería jquery.<br><br>Con javascript he participado en desarrollo de sitios web, manipulación de elementos html, destructuración de arreglos, creación de clases  y herencia de clases, funciones asyncronas y promesas, manejo de archivos blob o base64 en campos tipo file, manejo de rutas, validación de formularios basados en clases, expresiones regulares, manejo de bucles y construcción dinamica del html.",
-    "image": "javascript.jpg"    
+    "image": "js.png"    
   },
   {
     "id": 2,

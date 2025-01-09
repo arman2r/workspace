@@ -20,6 +20,7 @@ import { SwiperDirective } from '@/app/directives/swiper.directive';
 import { TopSkillsService } from '@/app/services/top-skills.service';
 import { SanitizedTopSkill, TopSkill } from '@/app/interfaces/topSkill.interface';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DetectDominantColorDirective } from '@/app/directives/detect-dominant-color.directive';
 
 
 @Component({
@@ -39,6 +40,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     NgIf,
     DescriptionProfileNavComponent,
     CheckHorizontalScrollDirective,
+    DetectDominantColorDirective
     //SwiperDirective
   ],
   templateUrl: './home.component.html',
